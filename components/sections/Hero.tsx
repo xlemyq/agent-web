@@ -8,6 +8,9 @@ export function Hero() {
   return (
     <section id="hero" className="relative overflow-hidden bg-slate-925 pb-20 pt-24">
       <div className="pointer-events-none absolute inset-0 bg-gold-radial" aria-hidden />
+      <div className="glow-orb left-[5%] top-10" aria-hidden />
+      <div className="glow-orb right-[5%] top-24" aria-hidden />
+      <div className="grid-overlay" aria-hidden />
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl space-y-8">
           <motion.p
@@ -44,14 +47,33 @@ export function Hero() {
             <Button>Umów strategię 30 min</Button>
             <Button variant="ghost">Zobacz nasze podejście</Button>
           </motion.div>
+          <motion.div
+            className="grid gap-3 sm:grid-cols-3"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+          >
+            {[
+              { label: 'Core Web Vitals', value: '95+/100', note: 'Lighthouse lab' },
+              { label: 'SLA na reakcję', value: '<2h', note: 'incydenty SEO' },
+              { label: 'Retencja', value: '93%', note: 'rok do roku' }
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-card">
+                <p className="text-xs uppercase tracking-[0.2em] text-gold-light">{item.label}</p>
+                <p className="text-2xl font-semibold text-white">{item.value}</p>
+                <p className="text-xs text-white/60">{item.note}</p>
+              </div>
+            ))}
+          </motion.div>
         </div>
         <motion.div
-          className="relative w-full max-w-md rounded-4xl border border-white/10 bg-white/5 p-6 shadow-card"
+          className="relative w-full max-w-md overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-6 shadow-card"
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <div className="absolute inset-0 -z-10 bg-onyx-gold opacity-60 blur-3xl" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/5" aria-hidden />
           <p className="text-sm font-semibold text-gold-light">Wskaźniki wzrostu</p>
           <ul className="mt-4 space-y-4">
             {metrics.map((metric) => (

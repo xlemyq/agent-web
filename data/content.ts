@@ -6,6 +6,7 @@ export const navigation = [
   { label: 'Operacje', href: '#operations' },
   { label: 'Współpraca', href: '#engagements' },
   { label: 'Partnerzy', href: '#partners' },
+  { label: 'Wyróżnienia', href: '#awards' },
   { label: 'Zasoby', href: '#resources' },
   { label: 'Zespół', href: '#team' },
   { label: 'FAQ', href: '#contact' }
@@ -209,6 +210,69 @@ export const partners = [
     name: 'HubSpot Solutions',
     detail: 'Integrujemy SEO z CRM, lead scoringiem i automatyzacją nurtures.',
     badge: 'RevOps'
+  }
+];
+
+export const awards = [
+  {
+    title: 'Awwwards Honorable Mention',
+    year: '2024',
+    issuer: 'Awwwards Jury',
+    badge: 'Design',
+    description:
+      'Nagroda za połączenie wysokiej wydajności Core Web Vitals z doświadczeniem wizualnym gold/black i mikrointerakcjami 60 fps.',
+    highlights: ['Core Web Vitals 95+', 'UX Premium', 'Perf-A11y balans'],
+    link: 'https://www.awwwards.com'
+  },
+  {
+    title: 'European Search Awards – Finalist',
+    year: '2025',
+    issuer: 'Doncaster Search Jury',
+    badge: 'SEO',
+    description:
+      'Projekt UP5Star został wyróżniony w kategorii „Best Use of Search – B2B” za strategię topical authority i wzrost MQL.',
+    highlights: ['Topical authority', 'B2B growth', 'Transparent KPI'],
+    link: 'https://europeansearchawards.com'
+  },
+  {
+    title: 'Marketing Excellence – Gold',
+    year: '2025',
+    issuer: 'CMO Alliance',
+    badge: 'RevOps',
+    description:
+      'Złoto za integrację SEO z RevOps: lead scoring, CRM i automatyzację nurtures z mierzalnym wpływem na pipeline.',
+    highlights: ['RevOps', 'Lead scoring', 'Automation'],
+    link: 'https://cmoalliance.com'
+  },
+  {
+    title: 'DesignRush – Top Agencies',
+    year: '2024',
+    issuer: 'DesignRush',
+    badge: 'Agency',
+    description:
+      'Lista topowych agencji digital z naciskiem na spójność brandu, obsługę enterprise i przejrzyste raporty KPI.',
+    highlights: ['Brand safety', 'Enterprise ops', 'Transparent reports'],
+    link: 'https://www.designrush.com'
+  },
+  {
+    title: 'Clutch – 5.0 Star Rating',
+    year: '2025',
+    issuer: 'Clutch',
+    badge: 'Clients',
+    description:
+      'Pełna, zweryfikowana ocena klientów za jakość komunikacji, terminowość i realne wyniki SEO/CRO.',
+    highlights: ['Client verified', 'On-time delivery', 'SEO + CRO'],
+    link: 'https://clutch.co'
+  },
+  {
+    title: 'Forbes Agency Review',
+    year: '2025',
+    issuer: 'Forbes',
+    badge: 'Media',
+    description:
+      'Case study opisujący wykorzystanie struktury danych, edge cache i growth ops do skalowania leadów B2B.',
+    highlights: ['Structured data', 'Edge cache', 'Growth ops'],
+    link: 'https://www.forbes.com'
   }
 ];
 

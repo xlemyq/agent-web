@@ -11,6 +11,7 @@ import { Operations } from '@/components/sections/Operations';
 import { Engagements } from '@/components/sections/Engagements';
 import { Partners } from '@/components/sections/Partners';
 import { Resources } from '@/components/sections/Resources';
+import { Awards } from '@/components/sections/Awards';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Operations />
       <Engagements />
       <Partners />
+      <Awards />
       <Resources />
       <Testimonials />
       <Team />

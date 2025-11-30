@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { navigation } from '@/data/content';
 import { initializeThemeFromStorage, useThemeStore } from '@/lib/theme-store';
 import { cn } from '@/lib/utils';
@@ -13,13 +13,27 @@ const navVariants = {
 
 export function Header() {
   const { theme, toggle, setTheme } = useThemeStore();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setTheme(initializeThemeFromStorage());
   }, [setTheme]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 backdrop-blur-xl">
+    <header
+      className={cn(
+        'sticky top-0 z-40 backdrop-blur-xl transition duration-300',
+        scrolled ? 'border-b border-white/10 bg-slate-925/80 shadow-outline' : 'border-b border-transparent'
+      )}
+    >
       <a
         href="#hero"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-full focus:bg-gold-primary focus:px-4 focus:py-2 focus:text-slate-925"
@@ -68,8 +82,42 @@ export function Header() {
           >
             Porozmawiajmy o wzroście
           </a>
+          <button
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-850 text-white transition hover:border-gold-primary lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label="Menu"
+            onClick={() => setOpen((state) => !state)}
+          >
+            <span aria-hidden>{open ? '✕' : '≡'}</span>
+          </button>
         </div>
       </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-nav"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+            className="mx-auto mt-2 max-w-6xl rounded-3xl border border-white/10 bg-slate-925/95 px-4 py-4 shadow-card lg:hidden"
+          >
+            <div className="grid gap-3 text-sm font-semibold text-white">
+              {navigation.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl bg-white/5 px-4 py-3 hover:bg-gold-primary/10"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

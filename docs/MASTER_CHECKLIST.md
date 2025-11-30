@@ -22,7 +22,7 @@
 ## Content i sekcje
 - [x] Pełne sekcje premium (Hero, Services, Cases, Approach, Differentiators, Operations, Engagements, Partners, Resources, Testimonials, Team, Contact, CTA).
 - [ ] Utworzyć dedykowaną stronę blog/insights z paginacją i kartami artykułów.
-- [ ] Dodać sekcję "Awards / Media" z konkretnymi publikacjami po zebraniu materiałów.
+- [x] Dodać sekcję "Awards / Media" z konkretnymi publikacjami po zebraniu materiałów.
 - [ ] Rozszerzyć resources o bibliotekę playbooków do pobrania (PDF/Markdown) hostowaną w `public/assets/`.
 - [ ] Przygotować wersję landing page EN/DE (internationalization) z osobną sitemapą językową.
 

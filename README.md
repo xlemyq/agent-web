@@ -6,6 +6,7 @@ Kompletny, produkcyjny serwis agencji SEO klasy enterprise oparty o Next.js 15, 
 - **Premium storytelling:** Hero z KPI, CTA, metrykami i animacją cząsteczek w motywie gold/black.
 - **Oferta end-to-end:** Usługi SEO/CRO/Content + case studies z wynikami liczbowymi i tagami branż.
 - **Metodyka i operacje:** Discovery → sprinty → authority → resilience z KPI, SLA i playbookami.
+- **Dowody wiarygodności:** Testimonials, partnerstwa, certyfikacje, sekcja Awards/Media z realnymi wyróżnieniami i zespół ekspertów z linkami do LinkedIn.
 - **Dowody wiarygodności:** Testimonials, partnerstwa, certyfikacje, zespół ekspertów z linkami do LinkedIn.
 - **Konwersja i retencja:** Formularz briefu z walidacją, FAQ, CTA końcowe, jasne modele współpracy.
 - **Rezyliencja:** PWA, offline fallback, service worker z precache i cache-first.
@@ -13,6 +14,7 @@ Kompletny, produkcyjny serwis agencji SEO klasy enterprise oparty o Next.js 15, 
 ## 2) Architektura i technologia
 - **Runtime:** Node.js 20 (zalecane) lub 18 LTS; npm 10+.
 - **Framework:** Next.js 15 (App Router), React 18.3, TypeScript (strict).
+- **UI:** Tailwind CSS 3.4 z paletą gold/black, framer-motion 11, mikrointerakcje 60 fps, szklane panele i wzory siatki grid/mesh.
 - **UI:** Tailwind CSS 3.4 z paletą gold/black, framer-motion 11, mikrointerakcje 60 fps.
 - **Stan:** Zustand (przechowywanie motywu, preferencje użytkownika) + lokalne storage.
 - **PWA:** `app/manifest.ts`, `public/sw.js`, `public/offline.html`, rejestracja w layoucie.
@@ -46,7 +48,7 @@ npm run test         # Testy jednostkowe Vitest
   - `globals.css`, `manifest.ts`, `robots.ts`, `sitemap.ts` – styl globalny, PWA, SEO.
 - `components/`
   - `layout/` – Header, Footer (nawigacja, CTA, status offline).
-  - `sections/` – Hero, Services, Cases, Approach, Differentiators, Operations, Engagements, Partners, Resources, Testimonials, Team, Contact, CTA.
+  - `sections/` – Hero, Services, Cases, Approach, Differentiators, Operations, Engagements, Partners, Awards, Resources, Testimonials, Team, Contact, CTA.
   - `providers/` – ThemeProvider, ServiceWorkerInitializer.
   - `ui/` – Button i prymitywy interakcji (focus, hover, ripple).
 - `data/` – treści produkcyjne (nawigacja, usługi, case studies, FAQ, resources, partners, KPI).
@@ -56,14 +58,14 @@ npm run test         # Testy jednostkowe Vitest
 - `__tests__/` – unit testy utili (Vitest) + konfiguracja `vitest.config.ts`.
 
 ## 5) Styl wizualny i UX (motyw gold/black)
-- Gradienty, glow i glassmorphism zbalansowane względem tła, typografii i CTA.
+- Gradienty, glow i glassmorphism zbalansowane względem tła, typografii i CTA; wzory mesh/grid i orbity świetlne dla premium look & feel.
 - Animacje framer-motion zoptymalizowane pod 60 fps; respekt `prefers-reduced-motion`.
-- Responsywność mobile-first, siatka kart dostosowana do mobile/tablet/desktop.
+- Responsywność mobile-first, siatka kart dostosowana do mobile/tablet/desktop oraz mobilne menu z animacją (AnimatePresence).
 - Alt/aria, focus states, kontrast WCAG 2.1 AA, brak zbędnych ruchów layoutu (CLS < 0.1).
 
 ## 6) SEO, dane strukturalne, PWA
 - Meta: title, description, Open Graph, canonical ustawione w layoucie.
-- JSON-LD: Organization, WebSite, FAQ – rozszerzalne o BreadcrumbList/Article/Product po dodaniu podstron.
+- JSON-LD: Organization, WebSite, FAQ – rozszerzalne o BreadcrumbList/Article/Product po dodaniu podstron. Sekcja Awards/Media zawiera realne odnośniki do publikacji i wyróżnień.
 - Pliki: `app/robots.ts`, `app/sitemap.ts`, `app/manifest.ts` generowane w runtime.
 - Service Worker (`public/sw.js`): precache kluczowych assetów, cache-first dla stron, fallback do `public/offline.html`.
 
