@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { faqs } from '@/data/content';
+import { ServiceWorkerInitializer } from '@/components/providers/ServiceWorkerInitializer';
 
 export const metadata: Metadata = {
   title: 'UP5Star SEO | Agencja SEO klasy enterprise',
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl" className="dark">
       <body className="antialiased">
+        <ServiceWorkerInitializer />
         <Script id="schema-faq" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(faqSchema)}
         </Script>

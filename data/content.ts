@@ -3,6 +3,10 @@ export const navigation = [
   { label: 'Oferta', href: '#services' },
   { label: 'Realizacje', href: '#cases' },
   { label: 'Metodyka', href: '#approach' },
+  { label: 'Operacje', href: '#operations' },
+  { label: 'Współpraca', href: '#engagements' },
+  { label: 'Partnerzy', href: '#partners' },
+  { label: 'Zasoby', href: '#resources' },
   { label: 'Zespół', href: '#team' },
   { label: 'FAQ', href: '#contact' }
 ];
@@ -137,6 +141,95 @@ export const testimonials = [
     quote:
       'Zespół UP5Star wniósł dyscyplinę operacyjną i kreatywność. Tematyczne klastry zwiększyły nasz pipeline MQL kilkukrotnie.',
     score: 4.95
+  }
+];
+
+export const operations = [
+  {
+    title: 'Monitoring 24/7',
+    description:
+      'Alerty Lighthouse CI, uptime 99.95%, ścieżki rollbacku i obserwowalność w jednym panelu. Minimalizujemy ryzyko regresji SEO.',
+    signals: ['Lighthouse CI', 'Statuspage SLA', 'Playbook rollback']
+  },
+  {
+    title: 'Bezpieczeństwo i zgodność',
+    description:
+      'CSP, rate limiting, szyfrowanie TLS, skanowanie OWASP. Zasady least privilege i kontrola danych wrażliwych.',
+    signals: ['OWASP ASVS', 'CSP strict', 'Security by design']
+  },
+  {
+    title: 'Automatyzacja i QA',
+    description:
+      'Pipelines z testami regresji, kontraktów API i wizualnymi. Audyty Core Web Vitals przed każdym deployem.',
+    signals: ['Visual diff', 'API contracts', 'CWV gate']
+  }
+];
+
+export const engagements = [
+  {
+    name: 'Retainer Growth',
+    price: 'od 18 500 PLN / mc',
+    description: 'Stały squad SEO + CRO z dedykowanym PM i sprintami co 2 tygodnie.',
+    includes: ['Backlog RICE', 'Raporty executive', 'Panel wyników realtime'],
+    badge: 'Najczęściej wybierany'
+  },
+  {
+    name: 'Program 90 dni',
+    price: 'od 42 000 PLN',
+    description: 'Intensywny plan na kwartał: audyt 360°, roadmapa i dowiezienie priorytetów.',
+    includes: ['Audyt techniczny + content', 'Implementacja priorytetów', 'Warsztat zamknięcia'],
+    badge: 'Time-to-value'
+  },
+  {
+    name: 'Advisory C-Level',
+    price: 'od 8 500 PLN / mc',
+    description: 'Doradztwo strategiczne, przeglądy roadmapy, sparring z zespołem product/marketing.',
+    includes: ['Office hours 2x w miesiącu', 'Przegląd roadmapy', 'Shadowing decyzji'],
+    badge: 'Strategia'
+  }
+];
+
+export const partners = [
+  {
+    name: 'Google Partners',
+    detail: 'Certyfikowani specjaliści z ekosystemu Google Marketing Platform.',
+    badge: 'Certyfikat'
+  },
+  {
+    name: 'Ahrefs Certified Agency',
+    detail: 'Zaawansowane wykorzystanie danych linków i content gap na poziomie enterprise.',
+    badge: 'Data'
+  },
+  {
+    name: 'Cloudflare Alliance',
+    detail: 'Edge cache, Workers i ochronę WAF łączymy z celami Core Web Vitals.',
+    badge: 'Edge'
+  },
+  {
+    name: 'HubSpot Solutions',
+    detail: 'Integrujemy SEO z CRM, lead scoringiem i automatyzacją nurtures.',
+    badge: 'RevOps'
+  }
+];
+
+export const resources = [
+  {
+    title: 'Playbook Core Web Vitals',
+    description: 'Checklisty wdrożeń LCP, CLS i INP z mierzalnym wpływem na SEO i UX.',
+    link: 'mailto:hello@up5star.com?subject=Playbook%20Core%20Web%20Vitals',
+    category: 'Performance'
+  },
+  {
+    title: 'Framework Topical Authority',
+    description: 'Model budowy klastrów tematycznych z harmonogramem publikacji i QA treści.',
+    link: 'mailto:hello@up5star.com?subject=Framework%20Topical%20Authority',
+    category: 'Content'
+  },
+  {
+    title: 'Playbook Incident Response',
+    description: 'Procedury na spadki ruchu: diagnostyka, rollback, komunikacja z interesariuszami.',
+    link: 'mailto:hello@up5star.com?subject=Playbook%20Incident%20Response',
+    category: 'Ops'
   }
 ];
 

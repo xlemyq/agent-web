@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl" class="offline">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UP5Star SEO – Tryb offline</title>
+    <link rel="icon" href="/icons/brand.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --gold-primary: #d4af37;
+        --gold-dark: #aa8c2c;
+        --black: #0f0f0f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, sans-serif;
+        background: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.12), transparent 40%),
+          radial-gradient(circle at 80% 0%, rgba(212, 175, 55, 0.08), transparent 35%),
+          #0f0f0f;
+        color: #f8fafc;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+      }
+      main {
+        max-width: 720px;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 32px;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(16px);
+      }
+      h1 {
+        font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+        margin: 0 0 12px;
+        font-size: 2rem;
+        letter-spacing: -0.02em;
+        color: var(--gold-primary);
+      }
+      p {
+        margin: 0 0 16px;
+        line-height: 1.6;
+        color: #e2e8f0;
+      }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(212, 175, 55, 0.12);
+        color: var(--gold-primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border: 1px solid rgba(212, 175, 55, 0.24);
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin-top: 20px;
+      }
+      .card {
+        padding: 16px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .cta {
+        margin-top: 24px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        background: linear-gradient(135deg, #d4af37, #ffd700);
+        color: #0f0f0f;
+        font-weight: 700;
+        border-radius: 999px;
+        text-decoration: none;
+        box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+      }
+      .cta span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #0f0f0f;
+        color: var(--gold-primary);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main aria-labelledby="offline-heading">
+      <div class="status">Tryb offline</div>
+      <h1 id="offline-heading">Brak połączenia z siecią</h1>
+      <p>
+        Jesteś offline. Zachowaliśmy kluczowe elementy marki, abyś wiedział, że jesteś we właściwym miejscu. Gdy połączenie
+        wróci, strona automatycznie odświeży widok.
+      </p>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <h2 style="margin: 0 0 8px; font-size: 1.1rem; color: #fff;">Co możesz zrobić?</h2>
+          <p style="margin: 0;">Sprawdź Wi-Fi/LTE i odśwież stronę po przywróceniu połączenia.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h2 style="margin: 0 0 8px; font-size: 1.1rem; color: #fff;">Masz brief?</h2>
+          <p style="margin: 0;">Przygotuj dane: cele, domenę, stack analityczny, KPI oraz budżet mediowy.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h2 style="margin: 0 0 8px; font-size: 1.1rem; color: #fff;">Wsparcie UP5Star</h2>
+          <p style="margin: 0;">Napisz do nas na hello@up5star.com, odpowiemy po powrocie online.</p>
+        </div>
+      </div>
+      <a class="cta" href="/">
+        <span>↻</span>
+        Odśwież połączenie i wróć do serwisu
+      </a>
+    </main>
+  </body>
+</html>
