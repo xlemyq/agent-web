@@ -1,121 +1,115 @@
-UP5Star – Neon Luxury Website
-Overview
-UP5Star is a premium "Neon Luxury" website built using the latest web technologies. The project runs
-on Next.js 15 with the App Router, harnessing the power of React 18, TypeScript, Tailwind CSS, and
-framer-motion. It delivers a modern multi‑language (Polish   & English) experience with a dark,
-luxurious aesthetic accented by neon and gold highlights, anchored by the signature "neon wolf"
-visuals.
-This repository ( agent-web ) serves as the base for the website, built from the
-up5star‑neon‑next‑final‑updated package. It includes a complete codebase with pages, layouts,
-components, contexts, localization files, and assets.
-Getting Started
-Prerequisites
-Node.js v18 or newer
-A package manager such as pnpm, npm, or yarn
-Install dependencies:
-# Using pnpm
-pnpm install
-# or using npm
+# UP5Star SEO – Meta Master Edition
+
+Kompletny, produkcyjny serwis agencji SEO klasy enterprise oparty o Next.js 15, TypeScript, Tailwind CSS i framer-motion. Projekt dostarcza pełne treści sprzedażowe, sekcje premium (Hero, Usługi, Case Studies, Metodyka, Operations, Engagements, Partners, Resources), mikrointerakcje 60 fps w motywie gold & black, manifest PWA oraz schematy JSON-LD (Organization, WebSite, FAQ) gotowe do publikacji.
+
+## Kluczowe możliwości
+- **Hero + KPI** z wyróżnionym CTA, kartą wskaźników i animacją 60 fps.
+- **Usługi SEO/CRO/Content** z value proposition, deliverables i rezultatami.
+- **Case Studies** z wynikami liczbowymi, tagami branżowymi i proof pointami.
+- **Metodyka / Framework** (discovery → sprinty → authority → resilience) z KPI i SLA.
+- **Przewagi operacyjne** (performance, bezpieczeństwo, CRO, monitoring) w kartach premium.
+- **Engagement Models & Operations** pokazujące procesy, komunikację i governance.
+- **Partners & Certifications** z referencjami, narzędziami i ekosystemem.
+- **Resources** – materiały do pobrania i playbooki gotowe do użycia.
+- **Testimonials & Team** z kontekstem wdrożeń i linkami do LinkedIn.
+- **Formularz briefu + FAQ** z walidacją i pełnymi opisami wartości.
+- **Motyw ciemny/jasny** zapisany lokalnie na urządzeniu użytkownika.
+- **Manifest PWA, sitemap, robots oraz schematy JSON-LD** osadzone w layoucie.
+
+## Stos technologiczny
+- **Runtime:** Node.js 18+/20+ (zalecany Node 20)
+- **Framework:** Next.js 15 (App Router) + React 18.3 + TypeScript (strict)
+- **UI:** Tailwind CSS 3.4 (paleta gold/black), framer-motion 11
+- **Stan:** Zustand (przechowywanie motywu)
+- **Testy:** Vitest (jednostkowe)
+
+## Wymagania
+- Node.js 20 (rekomendowane) lub 18 LTS
+- npm 10+
+
+## Instalacja i uruchomienie
+```bash
 npm install
-Development
-Start the development server:
-pnpm run dev
-# or npm run dev
-Open http://localhost:3000 to view the site. The application uses Next.js 15’s App Router. There are
-language‑specific route groups ( (en) and (pl) ); for example, http://localhost:3000/en serves the
-English version.
-Building for Production
-Run the following to check code quality and build the project:
-•
-•
-1
-pnpm run lint # run ESLint with Next.js rules
-pnpm run type-check # run the TypeScript compiler (if configured)
-pnpm run build # create an optimized production build
-Running in Production
-After building, start the server with:
-pnpm start
-Project Structure
-├── app/
-│ ├── globals.css # global Tailwind styles
-│ ├── (en)/ # English pages and layouts
-│ │ ├── layout.tsx
-│ │ ├── page.tsx
-│ │ └── not-found.tsx
-│ └── (pl)/ # Polish pages and layouts
-│ ├── layout.tsx
-│ ├── page.tsx
-│ └── not-found.tsx
-├── components/
-│ ├── layout/ # Navbar, Footer, Preloader
-│ ├── sections/ # Hero, WhyUs, Packages, Process, Cases,
-About, Newsletter, Contact
-│ └── ui/ # shared buttons, cards, inputs
-├── contexts/
-│ └── ThemeContext.tsx # dark/light mode, accent colors, contrast
-settings, reduced motion
-├── locales/
-│ ├── en.json # all English text
-│ └── pl.json # all Polish text
-├── lib/
-│ └── cms.ts # CMS abstraction (local, Sanity, Contentful,
-Strapi)
-├── data/
-│ ├── posts-en.ts # blog & case study data in English
-│ └── posts-pl.ts # blog & case study data in Polish
-├── public/
-│ └── assets/ # images, videos, icons including the neon
-wolf and preloader
-├── tailwind.config.ts # design system tokens & animations
-└── next.config.js # Next.js configuration
-2
-Localization
-This project supports Polish ( pl ) and English ( en ). All user‑facing text is stored in locales/
-en.json and locales/pl.json . When adding new content, you must:
-Add corresponding keys and translations to both JSON files.
-Access the strings via the messages or translation hooks in layouts and sections instead of
-hard‑coding text.
-CMS Integration
-The lib/cms.ts module abstracts data sources. By setting NEXT_PUBLIC_CMS_PROVIDER in
-.env.local you can switch providers:
-local – uses static data files ( data/posts-*.ts and locales/*.json ).
-sanity, contentful, strapi – use external services (not configured by default).
-For external providers, populate NEXT_PUBLIC_CMS_* environment variables as documented in
-cms.ts .
-Design & Motion
-Theme: Dark background with gold and neon accents.
-Visual: Signature "neon wolf" motif in public/assets .
-Components: Use Tailwind utility classes consistent with the custom color palette defined in
-tailwind.config.ts . Avoid arbitrary hex codes.
-Animations: Use framer-motion for subtle entrance transitions, parallax, and hover effects.
-Always respect the prefers-reduced-motion setting to provide a static fallback.
-Quality & Contribution Guidelines
-This repository follows a strict zero‑placeholders policy (no lorem ipsum, no TODOs, no partial
-implementations). When contributing:
-Write complete, functional code. Avoid leaving sections incomplete or using placeholders.
-Use TypeScript strictly ( noImplicitAny: true ). Avoid any types unless absolutely
-necessary and explain why in comments.
-Always import modules using the @/ alias as defined in tsconfig.json .
-Ensure there is only one page.tsx per route level (Next.js App Router restriction).
-Extract all display text into locales/en.json and locales/pl.json .
-Keep the design consistent with the dark and neon aesthetic.
-Before submitting a change, run lint and type‑check, and mentally simulate the build process to
-catch errors.
-For more details on our developer workflows, see the internal meta plan file
-AGENT_WEB_UP5STAR_META_PLAN.md .
-1.
-2.
-•
-•
-•
-•
-•
-•
-•
-•
-•
-•
-•
-•
-•
-3
+npm run dev
+```
+Aplikacja startuje pod `http://localhost:3000`.
+
+### Build i start produkcyjny
+```bash
+npm run build
+npm run start
+```
+
+### Kontrola jakości
+```bash
+npm run lint         # ESLint (konfiguracja Next.js)
+npm run type-check   # Ścisły TypeScript (noEmit)
+npm run test         # Testy jednostkowe Vitest
+```
+
+## Struktura katalogów
+- `app/` – layout, strony, globalne style oraz pliki manifestu, sitemap i robots w App Router.
+- `components/` – komponenty layoutu, sekcji i UI (Hero, Services, Cases, CTA, Operations, Engagements, Partners, Resources, Team itd.).
+- `data/` – statyczne treści (nawigacja, usługi, case studies, FAQ, partners, resources, KPI, CTA).
+- `lib/` – utilsy (store motywu, funkcje pomocnicze).
+- `public/` – ikony, favicon, brand SVG oraz assety (np. `brand.svg`, `wolf.svg`).
+- `__tests__/` – testy jednostkowe (Vitest) dla utili.
+
+## Styl wizualny i UX
+- Motyw **gold & black** z gradientami, glow i glassmorphismem dopasowanymi do tła.
+- Animacje framer-motion zoptymalizowane pod 60 fps; respekt dla `prefers-reduced-motion`.
+- Responsywność mobile-first, kontrola typografii i spacingu, kontrast WCAG 2.1 AA.
+- Mikrointerakcje dla przycisków, kart, nawigacji i CTA, spójne z brandem UP5Star.
+
+## SEO, dane strukturalne i PWA
+- Pełne metatagowanie (title, description, Open Graph, canonical) w layoucie.
+- JSON-LD: **Organization**, **WebSite**, **FAQ** w `app/layout.tsx`.
+- **`app/manifest.ts`**, **`app/robots.ts`**, **`app/sitemap.ts`** generowane w App Router.
+- Service Worker (`public/sw.js`) z precache, cache-first i fallbackiem do `public/offline.html`; rejestracja w layoucie.
+- Treści zoptymalizowane pod wyszukiwane frazy B2B (SEO, CRO, content, growth, performance).
+
+## Dostępność i wydajność
+- Semantyczne znaczniki, aria-labels, focus states i minimalizacja layout shift.
+- GPU-friendly animacje, brak blokowania głównej pętli renderowania.
+- Wektory SVG dla brandu, lekkie bundlowanie, brak zbędnych assetów.
+
+## Zarządzanie treścią i motywem
+- Copy, nawigacja i sekcje: edytuj w `data/content.ts` (pełne, produkcyjne treści bez placeholderów).
+- Motyw i preferencje: store w `lib/theme-store.ts` z lokalnym zapisem wyboru użytkownika.
+- Nowe sekcje: utrzymuj konwencję komponentów w `components/sections/` korzystających z danych z `data/content.ts`.
+
+## Testy i jakość
+- Uruchom `npm run test` dla istniejących testów utili; rozbudowując pokrycie, dodawaj pliki w `__tests__/unit`.
+- `npm run lint` i `npm run type-check` przed każdym commitem zapewniają spójność kodu.
+
+## Deployment (skrót)
+1. Zbuduj: `npm run build`.
+2. Uruchom: `npm run start` (domyślnie port 3000) lub wdroż na Vercel/Node host z HTTPS.
+3. Serwuj statyczne assety z `public/`, włącz cache dla ikon/manifestu, ustaw kompresję i HTTP/2.
+4. W środowiskach kontenerowych ustaw `PORT` i reverse-proxy (np. Nginx) z HSTS i gzip/brotli.
+
+## Bezpieczeństwo i zgodność
+- Brak sekretów w repo; konfiguracje środowiskowe przechowuj poza kodem.
+- Formularz działa po stronie klienta – integrując backend, dodaj walidację, CSRF i rate limiting.
+- Stosuj bezpieczne atrybuty linków (`rel="noopener noreferrer"`), unikaj `eval`, waliduj wszystkie dane.
+
+## Monitoring i analityka
+- Integruj analitykę (np. Plausible/GA4) w layoucie zgodnie z RODO/CMP.
+- Regularnie audytuj Core Web Vitals (Lighthouse/CrUX) po zmianach wizualnych lub treściowych.
+
+## WordPress jako headless CMS (opcjonalnie)
+- Utrzymuj WordPress jako panel redakcyjny (REST/GraphQL), pobieraj wpisy w dedykowanych API routes w App Routerze.
+- Rozszerz caching w `public/sw.js` o strategiczne endpointy, rewaliduj ISR webhookiem po publikacji.
+- Media serwuj z CDN (S3/CloudFront) i dodaj domeny do `next.config.js` → `images.domains`.
+
+## Checklista realizacji
+- Postęp i backlog w `docs/MASTER_CHECKLIST.md` (PWA, bezpieczeństwo, content, integracje, testy).
+- Kroki wdrożeniowe opisano w `DEPLOYMENT-GUIDE.md` wraz z checklistą pre-deploy i integracją headless WordPress.
+
+## Utrzymanie i dalszy rozwój
+- Projekt jest w pełni statyczny – łatwy do iteracji i rozbudowy o kolejne sekcje i podstrony.
+- Zachowuj spójność namingową i strukturalną komponentów; korzystaj z danych centralnie w `data/content.ts`.
+- Rozważ dodanie testów e2e (Playwright) dla ścieżek CTA oraz testów integracyjnych dla nowych funkcji.
+
+## Licencja
+Kod udostępniany w celach demonstracyjnych. Skontaktuj się z zespołem UP5Star w sprawie wdrożeń komercyjnych.
