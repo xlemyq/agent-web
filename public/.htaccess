@@ -1,0 +1,24 @@
+# Security headers for Apache deployments
+<IfModule mod_headers.c>
+  Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "no-referrer-when-downgrade"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://fonts.gstatic.com; frame-ancestors 'self';"
+</IfModule>
+
+# Compression and caching
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 90 days"
+  ExpiresByType image/webp "access plus 90 days"
+  ExpiresDefault "access plus 7 days"
+</IfModule>

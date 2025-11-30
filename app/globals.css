@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  background: #0f0f0f;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at 25% 20%, rgba(212, 175, 55, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(212, 175, 55, 0.05), transparent 35%),
+    linear-gradient(135deg, rgba(15, 15, 15, 0.9), rgba(26, 26, 26, 0.9)),
+    #0f0f0f;
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(255, 215, 0, 0.04), transparent 35%),
+    linear-gradient(225deg, rgba(170, 140, 44, 0.06), transparent 45%);
+  background-size: 120px 120px, 100% 100%, 100% 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffd700;
+}
+
+::selection {
+  background: #d4af37;
+  color: #0f0f0f;
+}
+
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, #d4af37, #ffd700, #aa8c2c);
+  z-index: 0;
+}
+
+.gradient-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-surface {
+  background: rgba(26, 26, 26, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-orb {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.22), transparent 55%);
+  filter: blur(40px);
+  opacity: 0.75;
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+}
+
+.reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html.offline::after {
+  content: 'Tryb offline – sprawdź połączenie';
+  position: fixed;
+  inset: auto 16px 16px 16px;
+  z-index: 50;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.92), rgba(255, 215, 0, 0.88));
+  color: #0f0f0f;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
