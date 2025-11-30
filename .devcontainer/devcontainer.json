@@ -47,5 +47,5 @@
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
   "postCreateCommand": "npm install && npx playwright install --with-deps",
-  "postStartCommand": "npm run lint:check && npm run type-check"
+  "postStartCommand": "npm run lint && npm run type-check"
 }
