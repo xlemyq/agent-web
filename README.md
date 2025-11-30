@@ -7,6 +7,7 @@ Kompletny, produkcyjny serwis agencji SEO klasy enterprise oparty o Next.js 15, 
 - **Oferta end-to-end:** Usługi SEO/CRO/Content + case studies z wynikami liczbowymi i tagami branż.
 - **Metodyka i operacje:** Discovery → sprinty → authority → resilience z KPI, SLA i playbookami.
 - **Dowody wiarygodności:** Testimonials, partnerstwa, certyfikacje, sekcja Awards/Media z realnymi wyróżnieniami i zespół ekspertów z linkami do LinkedIn.
+- **Dowody wiarygodności:** Testimonials, partnerstwa, certyfikacje, zespół ekspertów z linkami do LinkedIn.
 - **Konwersja i retencja:** Formularz briefu z walidacją, FAQ, CTA końcowe, jasne modele współpracy.
 - **Rezyliencja:** PWA, offline fallback, service worker z precache i cache-first.
 
@@ -14,6 +15,7 @@ Kompletny, produkcyjny serwis agencji SEO klasy enterprise oparty o Next.js 15, 
 - **Runtime:** Node.js 20 (zalecane) lub 18 LTS; npm 10+.
 - **Framework:** Next.js 15 (App Router), React 18.3, TypeScript (strict).
 - **UI:** Tailwind CSS 3.4 z paletą gold/black, framer-motion 11, mikrointerakcje 60 fps, szklane panele i wzory siatki grid/mesh.
+- **UI:** Tailwind CSS 3.4 z paletą gold/black, framer-motion 11, mikrointerakcje 60 fps.
 - **Stan:** Zustand (przechowywanie motywu, preferencje użytkownika) + lokalne storage.
 - **PWA:** `app/manifest.ts`, `public/sw.js`, `public/offline.html`, rejestracja w layoucie.
 - **Testy:** Vitest (unit); przygotowanie pod Playwright (E2E) i Lighthouse CI.
