@@ -30,6 +30,15 @@ npm run dev
 ```
 Aplikacja startuje pod `http://localhost:3000`.
 
+### Praca w Dev Container
+Repozytorium zawiera w pełni skonfigurowany devcontainer (VS Code / GitHub Codespaces) oparty na Node.js 22 z preinstalowanymi rozszerzeniami ESLint, Prettier, Tailwind, Prisma i Playwright.
+
+1. Otwórz projekt w VS Code i wybierz **Reopen in Container**.
+2. Po zbudowaniu środowiska zostaną wykonane automatycznie: `npm install`, `npx playwright install --with-deps`, a następnie sanity checki `npm run lint:check` i `npm run type-check`.
+3. Uruchamiaj standardowe skrypty, np. `npm run dev`, `npm run test`, `npm run guardian:validate` bez dodatkowej konfiguracji hosta.
+
+Szczegóły konfiguracji znajdziesz w `docs/DEVCONTAINER.md`.
+
 ## Jakość
 - `npm run lint` – reguły Next.js + ESLint
 - `npm run type-check` – weryfikacja TypeScript
